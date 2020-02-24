@@ -23,7 +23,7 @@ Metadata (read only) [mandatory by default]
 
 2. click on create App
 
-3. (optional) Upload an image for your bot/app
+3. (optional) Upload an image for your app. This image will be shown for your bot user when creating comments.
 
 4. create private key by clicking **Generate a private key** and save the file on your computer. You'll later have to copy the content of this file into a secret of your GitHub Action.
 
