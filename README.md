@@ -1,4 +1,4 @@
-# github-action-comment-test
+# Workaround: Write Access for GitHub Actions in PRs
 
 This repository demonstrates how to use a GitHub App (Bot) to get write access to certain parts of the GitHub API inside a GitHub Actiom. Due to security reasons GitHub Actions currently only have read access to the API for pull requests. This is really annoying if want to post a comment from an Action for PR since this is one of my favourite use cases of actions.
 
