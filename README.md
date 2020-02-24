@@ -21,7 +21,9 @@ Metadata (read only) [mandatory by default]
 
 4. create private key by clicking **Generate a private key** and save the file on your computer. You'll later have to copy the content of this file into a secret of your GitHub Action.
 
-5. Generate an JWT token for your App as decribed by [https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app](Authenticating as GitHub App)
+5. Install your GitHub App into your org. 
+
+6. Generate an JWT token for your App as decribed by [https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app](Authenticating as GitHub App)
 
 This is an example for ruby. You'll need to enter your **APP ID** and the **path to the secret key file**:
 ```rb
@@ -45,8 +47,16 @@ payload = {
 jwt = JWT.encode(payload, private_key, "RS256")
 puts jwt
 ```
+To try this code locally you need to install the jwt package:
+```
+sudo gem install jwt
+```
 
-6. Install your GitHub App into your org. 
+To execute the snippet:
+```
+ruby my_file.rb
+```
+The script will then print the **JWT Token** on the command line.
 
 The following steps make use of the GitHub Apps API to generate a token for your installation. This token can be used to post comments on a PR. https://developer.github.com/v3/apps/
 
@@ -80,3 +90,7 @@ BODY (JSON):
   "body": "hello from github action"
 }
 ```
+
+
+To use this mechanism in a GitHub actions I guess you could simply do steps 6-9 on the fly. The only requirement will be that you store the generated key in a **GitHub Secret**.
+
