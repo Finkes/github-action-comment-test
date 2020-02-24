@@ -98,5 +98,5 @@ BODY (JSON):
 ```
 
 
-To use this mechanism in a GitHub actions I guess you could simply do steps 6-9 on the fly. The only requirement will be that you store the generated key in a **GitHub Secret**.
+To use this mechanism inside a GitHub action I hope that you can simply do steps 6-9 on the fly for every run of your action. The only requirement will be that you store the generated key in a **GitHub Secret**.
 
