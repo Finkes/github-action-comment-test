@@ -23,7 +23,7 @@ Metadata (read only) [mandatory by default]
 
 5. Install your GitHub App into your org. 
 
-6. Generate an JWT token for your App as decribed by [https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app](Authenticating as GitHub App)
+6. Generate an JWT token for your App as decribed by [Authenticating as GitHub App](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app)
 
 This is an example for ruby. You'll need to enter your **APP ID** and the **path to the secret key file**:
 ```rb
