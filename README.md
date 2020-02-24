@@ -9,6 +9,7 @@ Name: <name of your bot>
 Homepage URL: You can use the URL to your repo
 
 Permissions:
+
 Pull requests (read & write)
 Issues? <- I used it because PR comments are actually sent via the issue comments API
 Metadata (read only) [mandatory by default]
@@ -49,22 +50,30 @@ puts jwt
 
 The following steps make use of the GitHub Apps API to generate a token for your installation. This token can be used to post comments on a PR. https://developer.github.com/v3/apps/
 
-7. Use the github apps API to get your installations:
+7. Use the github apps API to get your installation. You need it to find the **installation ID**:
+
 
 ```
 GET https://api.github.com/app/installations 
 HEADERS:
-Authorization: Bearer <your generated JWT token>
+  Authorization: Bearer <your generated JWT token>
+  Accept: application/vnd.github.machine-man-preview+json
 ```
 
-8. create an installation token via the API
+8. create an installation token via the API:
+```
+POST https://api.github.com/app/installations/:installation_id/access_tokens
+HEADERS:
+  Authorization: Bearer <your generated JWT token>
+  Accept: application/vnd.github.machine-man-preview+json
+```
 
 9. Use the token to post a comment to your PR:
 
 ```
 POST https://api.github.com/repos/:org/:repo/issues/:ID_OF_PR/comments
 HEADERS:
-Authorization: Bearer <your installation token>
+  Authorization: Bearer <your installation token>
 
 BODY (JSON):
 {
