@@ -1,6 +1,12 @@
 # github-action-comment-test
 
-This repository demonstrates how to use a bot of a GitHub App to send comments from GitHub actions.
+This repository demonstrates how to use a GitHub App (Bot) to get write access to certain parts of the GitHub API inside a GitHub Actiom. Due to security reasons GitHub Actions currently only have read access to the API for pull requests. This is really annoying if want to post a comment from an Action for PR since this is one of my favourite use cases of actions.
+
+The idea of this workaround is that you register your own GitHub App which will have a bot identity. You'll be able to specify exactly which scopes you needed! 
+
+This is only a workaround and I still hope that there will be a better solution available soon!
+
+
 
 
 1. create a github app here https://github.com/settings/apps/new
